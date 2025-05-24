@@ -10,7 +10,26 @@ import HirePrep from './pages/HirePrep/HirePrep'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Router>
+        <Routes>
+          {/* Default Route */}
+          <Route path="/" element={<LandingPage />} />
+
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/hire-prep/:sessionId' element={<HirePrep />} />
+        </Routes>
+      </Router>
+
+      <Toaster
+        toastOptions={{
+          className: '',
+          style: {
+            fontSize: '13px',
+          }
+        }}
+      />
+    </div>
   )
 }
 
